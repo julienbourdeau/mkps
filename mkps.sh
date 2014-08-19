@@ -37,7 +37,8 @@ git submodule foreach git pull --no-rebase 2>/dev/null
 
 echo -e "${green}Tweaking git repository ${NC}"
 git config core.fileMode false 2>/dev/null
-it foreach git config core.fileMode false 2>/dev/null
+git foreach git config core.fileMode false 2>/dev/null
+git submodule foreach git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 
 echo -e "${green}Installing git hooks ${NC}"
 cd .git/hooks
